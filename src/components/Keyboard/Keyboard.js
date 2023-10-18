@@ -37,7 +37,7 @@ export default function Keyboard() {
             >
                 <Key big={true} letter={'Enter'} />
                 {
-                    set2.map((char, index) => <Key key={index} letter={char} />)
+                    set3.map((char, index) => <Key key={index} letter={char} />)
                 }
                 <Key big={true} letter={<ArrowLeftOutlined />} />
             </div>

@@ -4,23 +4,26 @@ import validNames from "./data/names.json"
 export const WordleContext = createContext();
 
 function App() {
-  const names = validNames && validNames;
-  const [word, setWord] = useState('GAMES');
+  const names = validNames && validNames.map( (record) => {
+    return record.word
+  });
+  const [word, setWord] = useState('EKANS');
   const [guessWord, setGuessWord] = useState('');
   const [completedRows, setCompletedRows] = useState([]);
   const [currentRow, setCurrentRow] = useState(0);
 
   function guessTheWord(char) {
-    if(guessTheWord.length === 5) {
+    if(guessWord.length === 5) {
       return;
     }
-    setGuessWord(guessTheWord.concat(char));
+    setGuessWord(guessWord.concat(char));
   }
 
   function pressEnter() {
-    if(guessTheWord.length < 5) return;
-    if(!validNames.includes(guessTheWord.toLowerCase())) return alert('pokemon doesnt exist!');
-    if(guessTheWord == word ) alert("congrats u got it!");
+
+    if(guessWord.length < 5) return;
+    if(!names.includes(guessWord.toLowerCase())) return alert('pokemon doesnt exist!');
+    if(guessWord == word ) alert("congrats u got it!");
 
     setCurrentRow(currentRow+1);
     setCompletedRows([...completedRows, currentRow]);

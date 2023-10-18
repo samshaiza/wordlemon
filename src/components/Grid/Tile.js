@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import React from 'react'
 import { WordleContext } from "../../App";
 
 
-export default function Tile() {
+export default function Tile({id, rowId}) {
+    
     const [letter, setLetter] = useState('');
     const [completed, setCompleted] = useState(true);
     const {guessWord, word, currentRow, completedRows} = React.useContext(WordleContext);
@@ -13,6 +14,16 @@ export default function Tile() {
         backgroundColor: colors.back,
         color: colors.font 
     }
+
+    React.useEffect(() => {
+        if(currentRow === rowId) {
+            setLetter(guessWord[id])
+        }
+        if(completedRows.includes(rowId) && completed) {
+            changeColors();
+            setCompleted(false);
+        }
+    }, [guessWord, completedRows]);
 
     function changeColors() {
         const arrayWord = word.split("");
@@ -26,7 +37,7 @@ export default function Tile() {
     }
 
     return (
-        <div style={{style}} className='flex justify-center my-[2px] m-[2px] items-center w-[62px] h-[62px] border-2'>
+        <div style={style} className='flex justify-center my-[2px] m-[2px] items-center w-[62px] h-[62px] border-2'>
             <p className='flex self-center mb-2 font-bold text-5xl'>{letter}</p>
         </div>
     )
