@@ -11,8 +11,13 @@ export function generateNameSet() {
     return { nameSet };
 }
 */
+
+function newWord(names) {
+    return names[Math.floor(Math.random() * names.length)];
+}
+
 export const generateNameSet = async () => {
-    
+    let firstWord;
     let nameSet;
     await fetch("http://localhost:3001/names")
         .then((res) => res.json())
@@ -20,12 +25,12 @@ export const generateNameSet = async () => {
             const names = result.map((record) => {
                 return record.word;
             })
-            console.log(names);
+            firstWord = newWord(names);
             nameSet = new Set(names);
         })
         .catch((e) => {
             console.log(e);
         });
     
-    return { nameSet };
+    return { nameSet, firstWord };
 }

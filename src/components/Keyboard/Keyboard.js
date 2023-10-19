@@ -5,7 +5,7 @@ import { WordleContext } from '../../App'
 
 export default function Keyboard() {
 
-    const { guessTheWord, pressBackspace, pressEnter } = useContext(WordleContext)
+    const { guessTheWord, pressBackspace, pressEnter, wrongLetters } = useContext(WordleContext)
 
     const set1 = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P']
     const set2 = ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L']
@@ -33,7 +33,7 @@ export default function Keyboard() {
                 }
             })
         }
-    });
+    }, []);
 
     useEffect(() => {
         document.addEventListener("keydown", handleKeyboard);
@@ -49,7 +49,7 @@ export default function Keyboard() {
                 style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', margin:0}}>
                 {
                     set1.map((char, index) => 
-                        <Key key={index} letter={char} 
+                        <Key key={index} letter={char} disabled={wrongLetters.includes(char)}
                     />)
                 }
             </div>
@@ -62,7 +62,7 @@ export default function Keyboard() {
                 style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', margin:0}}>
                 {
                     set2.map((char, index) => 
-                        <Key key={index} letter={char} 
+                        <Key key={index} letter={char} disabled={wrongLetters.includes(char)}
                     />)
                 }
             </div>
@@ -76,7 +76,7 @@ export default function Keyboard() {
                 <Key big={true} letter={'Enter'} />
                 {
                     set3.map((char, index) => 
-                        <Key key={index} letter={char} 
+                        <Key key={index} letter={char} disabled={wrongLetters.includes(char)}
                     />)
                 }
                 <Key big={true} letter={<ArrowLeftOutlined />} />
