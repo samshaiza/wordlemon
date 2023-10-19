@@ -19,9 +19,10 @@ function newWord(names) {
 export const generateNameSet = async () => {
     let firstWord;
     let nameSet;
-    await fetch("http://localhost:3001/names")
+    await fetch("http://localhost:3001/pokemon")
         .then((res) => res.json())
         .then((result) => {
+            console.log(result);
             const names = result.map((record) => {
                 return record.word;
             })

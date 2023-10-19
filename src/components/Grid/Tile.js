@@ -9,7 +9,7 @@ export default function Tile({id, rowId}) {
     const [completed, setCompleted] = useState(true);
     const {guessWord, word, currentRow, completedRows, setWrongLetters } = React.useContext(WordleContext);
     const [colors, setColors] = useState({back: "white", font: "black"});
-
+    
     const style = {
         backgroundColor: colors.back,
         color: colors.font 
