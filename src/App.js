@@ -1,27 +1,43 @@
 import WordleBoard from "./components/WordleBoard";
-import { createContext, useState } from "react";
-import validNames from "./data/names.json"
+import { createContext, useEffect, useState } from "react";
+import { generateNameSet } from "./Words";
 export const WordleContext = createContext();
 
 function App() {
-  const names = validNames && validNames;
-  const [word, setWord] = useState('GAMES');
+  const [nameSet, setNameSet ] = useState(new Set());
+  const [word, setWord] = useState('');
   const [guessWord, setGuessWord] = useState('');
   const [completedRows, setCompletedRows] = useState([]);
   const [currentRow, setCurrentRow] = useState(0);
+  const [wrongLetters, setWrongLetters] = useState([]);
+  const [gameOver, setGameOver] = useState({gameOver: false, guessedWord: false});
+  useEffect(() => {
+      generateNameSet().then((names) => {
+        setNameSet(names.nameSet);
+        setWord(names.firstWord);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+      console.log('i fire once');
+  }, []);
 
   function guessTheWord(char) {
-    if(guessTheWord.length === 5) {
+    if(guessWord.length === 5) {
       return;
     }
-    setGuessWord(guessTheWord.concat(char));
+    setGuessWord(guessWord.concat(char));
   }
 
   function pressEnter() {
-    if(guessTheWord.length < 5) return;
-    if(!validNames.includes(guessTheWord.toLowerCase())) return alert('pokemon doesnt exist!');
-    if(guessTheWord == word ) alert("congrats u got it!");
-
+    if(guessWord.length < 5) return;
+    if(!nameSet.has(guessWord.toLowerCase())) return alert('pokemon doesnt exist!');
+    if(guessWord === word.toUpperCase() ) {
+      setGameOver({gameOver: true, guessedWord: true});
+    } 
+    if (currentRow === 5 && guessWord !== word.toUpperCase()) {
+      setGameOver({gameOver: true, guessedWord: false});
+    }
     setCurrentRow(currentRow+1);
     setCompletedRows([...completedRows, currentRow]);
     setGuessWord("");
@@ -39,7 +55,11 @@ function App() {
       currentRow,
       word,
       guessWord,
-      pressBackspace
+      pressBackspace,
+      wrongLetters,
+      setWrongLetters,
+      gameOver,
+      setGameOver
     }}>
       <WordleBoard />
     </WordleContext.Provider>
