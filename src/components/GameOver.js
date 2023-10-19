@@ -1,8 +1,11 @@
 import React, {useContext} from 'react'
 import { WordleContext } from '../App'
-
+import { newWord } from '../Words';
+import RestartBtn from './RestartBtn';
 export default function GameOver() {
     const { gameOver, word, currentRow } = useContext(WordleContext);
+
+
   return (
     <div className="">
         <h1>{gameOver.guessedWord ? "You got it homeslice!" : "You failure..."}</h1>
@@ -10,6 +13,7 @@ export default function GameOver() {
         {gameOver.guessedWord && (
             <h3>You guessed in {currentRow} tries!</h3>
         )}
+        <RestartBtn />
     </div>
   )
 }

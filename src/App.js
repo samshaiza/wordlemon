@@ -11,6 +11,7 @@ function App() {
   const [currentRow, setCurrentRow] = useState(0);
   const [wrongLetters, setWrongLetters] = useState([]);
   const [gameOver, setGameOver] = useState({gameOver: false, guessedWord: false});
+  const [tileReset, setTileReset] = useState(false);
   useEffect(() => {
       generateNameSet().then((names) => {
         setNameSet(names.nameSet);
@@ -38,6 +39,7 @@ function App() {
     if (currentRow === 5 && guessWord !== word.toUpperCase()) {
       setGameOver({gameOver: true, guessedWord: false});
     }
+    console.log("NEW TURN");
     setCurrentRow(currentRow+1);
     setCompletedRows([...completedRows, currentRow]);
     setGuessWord("");
@@ -59,7 +61,14 @@ function App() {
       wrongLetters,
       setWrongLetters,
       gameOver,
-      setGameOver
+      setGameOver,
+      setWord,
+      setCurrentRow,
+      setCompletedRows,
+      nameSet,
+      setGuessWord,
+      setTileReset,
+      tileReset
     }}>
       <WordleBoard />
     </WordleContext.Provider>

@@ -3,6 +3,7 @@ import Grid from './Grid/Grid'
 import Keyboard from './Keyboard/Keyboard'
 import { WordleContext } from '../App'
 import GameOver from './GameOver'
+import RestartBtn from './RestartBtn'
 export default function WordleBoard() {
     const { gameOver } = useContext(WordleContext)
 
@@ -11,6 +12,7 @@ export default function WordleBoard() {
         <h1 className='font-extrabold text-5xl m-4'>WORDLEMON</h1>
         <Grid />
         {gameOver.gameOver ? <GameOver /> : <Keyboard />}
+        <RestartBtn />
     </div>
   )
 }

@@ -12,7 +12,7 @@ export function generateNameSet() {
 }
 */
 
-function newWord(names) {
+export function newWord(names) {
     return names[Math.floor(Math.random() * names.length)];
 }
 
