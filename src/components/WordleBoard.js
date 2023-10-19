@@ -1,4 +1,4 @@
-import React, { createContext } from 'react'
+import React from 'react'
 import Grid from './Grid/Grid'
 import Keyboard from './Keyboard/Keyboard'
 

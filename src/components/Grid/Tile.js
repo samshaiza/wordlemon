@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import React from 'react'
 import { WordleContext } from "../../App";
 

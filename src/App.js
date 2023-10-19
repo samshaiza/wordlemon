@@ -1,16 +1,24 @@
 import WordleBoard from "./components/WordleBoard";
-import { createContext, useState } from "react";
-import validNames from "./data/names.json"
+import { createContext, useEffect, useState } from "react";
+import { generateNameSet } from "./Words";
 export const WordleContext = createContext();
 
 function App() {
-  const names = validNames && validNames.map( (record) => {
-    return record.word
-  });
+  const [nameSet, setNameSet ] = useState(new Set());
   const [word, setWord] = useState('EKANS');
   const [guessWord, setGuessWord] = useState('');
   const [completedRows, setCompletedRows] = useState([]);
   const [currentRow, setCurrentRow] = useState(0);
+
+  useEffect(() => {
+      generateNameSet().then((names) => {
+        setNameSet(names.nameSet);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+      console.log('i fire once');
+  }, []);
 
   function guessTheWord(char) {
     if(guessWord.length === 5) {
@@ -22,9 +30,11 @@ function App() {
   function pressEnter() {
 
     if(guessWord.length < 5) return;
-    if(!names.includes(guessWord.toLowerCase())) return alert('pokemon doesnt exist!');
-    if(guessWord == word ) alert("congrats u got it!");
-
+    if(!nameSet.has(guessWord.toLowerCase())) return alert('pokemon doesnt exist!');
+    if(guessWord == word ) {
+      alert("congrats u got it!");
+    } 
+    
     setCurrentRow(currentRow+1);
     setCompletedRows([...completedRows, currentRow]);
     setGuessWord("");

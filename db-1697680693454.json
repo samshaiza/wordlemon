@@ -1,0 +1,298 @@
+{
+  "names": [
+    {
+      "id": "1",
+      "word": "absol",
+      "type": "dark",
+      "gen": "3"
+    },
+    {
+      "id": "2",
+      "word": "aipom",
+      "type": "normal",
+      "gen": "2"
+    },
+    {
+      "id": "3",
+      "word": "bagon",
+      "type": "dragon",
+      "gen": "3"
+    },
+    {
+      "id": "4",
+      "word": "azelf",
+      "type": "psychic",
+      "gen": "4"
+    },
+    {
+      "id": "5",
+      "word": "arbok",
+      "type": "poison",
+      "gen": "1"
+    },
+    {
+      "id": "6",
+      "word": "budew",
+      "type": "grass/poison",
+      "gen": "4"
+    },
+    {
+      "id": "7",
+      "word": "burmy",
+      "type": "bug",
+      "gen": "4"
+    },
+    {
+      "id": "8",
+      "word": "chiyu",
+      "type": "dark/fire",
+      "gen": "9"
+    },
+    {
+      "id": "9",
+      "word": "ditto",
+      "type": "normal",
+      "gen": "1"
+    },
+    {
+      "id": "10",
+      "word": "doduo",
+      "type": "normal/flying",
+      "gen": "1"
+    },
+    {
+      "id": "11",
+      "word": "eevee",
+      "type": "normal",
+      "gen": "1"
+    },
+    {
+      "id": "12",
+      "word": "ekans",
+      "type": "poison",
+      "gen": "1"
+    },
+    {
+      "id": "13",
+      "word": "entei",
+      "type": "fire",
+      "gen": "2"
+    },
+    {
+      "id": "14",
+      "word": "gible",
+      "type": "dragon/ground",
+      "gen": "4"
+    },
+    {
+      "id": "15",
+      "word": "gloom",
+      "type": "grass/poison",
+      "gen": "1"
+    },
+    {
+      "id": "16",
+      "word": "golem",
+      "type": "rock/ground",
+      "gen": "1"
+    },
+    {
+      "id": "17",
+      "word": "goomy",
+      "type": "dragon",
+      "gen": "6"
+    },
+    {
+      "id": "18",
+      "word": "hoopa",
+      "type": "psychic/ghost",
+      "gen": "6"
+    },
+    {
+      "id": "19",
+      "word": "hypno",
+      "type": "psychic",
+      "gen": "1"
+    },
+    {
+      "id": "20",
+      "word": "inkay",
+      "type": "dark/psychic",
+      "gen": "6"
+    },
+    {
+      "id": "21",
+      "word": "klang",
+      "type": "steel",
+      "gen": "5"
+    },
+    {
+      "id": "22",
+      "word": "klawf",
+      "type": "steel",
+      "gen": "9"
+    },
+    {
+      "id": "23",
+      "word": "klink",
+      "type": "steel",
+      "gen": "5"
+    },
+    {
+      "id": "24",
+      "word": "kubfu",
+      "type": "fighting",
+      "gen": "8"
+    },
+    {
+      "id": "25",
+      "word": "lokix",
+      "type": "bug/dark",
+      "gen": "9"
+    },
+    {
+      "id": "26",
+      "word": "lotad",
+      "type": "water/grass",
+      "gen": "3"
+    },
+    {
+      "id": "27",
+      "word": "lugia",
+      "type": "psychic/flying",
+      "gen": "2"
+    },
+    {
+      "id": "28",
+      "word": "luxio",
+      "type": "electric",
+      "gen": "4"
+    },
+    {
+      "id": "29",
+      "word": "magby",
+      "type": "fire",
+      "gen": "2"
+    },
+    {
+      "id": "30",
+      "word": "minun",
+      "type": "electric",
+      "gen": "3"
+    },
+    {
+      "id": "31",
+      "word": "munna",
+      "type": "psychic",
+      "gen": "5"
+    },
+    {
+      "id": "32",
+      "word": "nacli",
+      "type": "rock",
+      "gen": "9"
+    },
+    {
+      "id": "33",
+      "word": "numel",
+      "type": "fire/ground",
+      "gen": "3"
+    },
+    {
+      "id": "34",
+      "word": "paras",
+      "type": "bug/grass",
+      "gen": "1"
+    },
+    {
+      "id": "35",
+      "word": "pawmi",
+      "type": "electric",
+      "gen": "9"
+    },
+    {
+      "id": "36",
+      "word": "pawmo",
+      "type": "electric/fighting",
+      "gen": "9"
+    },
+    {
+      "id": "37",
+      "word": "pichu",
+      "type": "electric",
+      "gen": "2"
+    },
+    {
+      "id": "38",
+      "word": "ralts",
+      "type": "psychic/fairy",
+      "gen": "3"
+    },
+    {
+      "id": "39",
+      "word": "riolu",
+      "type": "fighting",
+      "gen": "4"
+    },
+    {
+      "id": "40",
+      "word": "rotom",
+      "type": "electric/ghost",
+      "gen": "4"
+    },
+    {
+      "id": "41",
+      "word": "shinx",
+      "type": "electric",
+      "gen": "4"
+    },
+    {
+      "id": "42",
+      "word": "snivy",
+      "type": "grass",
+      "gen": "5"
+    },
+    {
+      "id": "43",
+      "word": "tepig",
+      "type": "fire",
+      "gen": "5"
+    },
+    {
+      "id": "44",
+      "word": "throh",
+      "type": "fighting",
+      "gen": "5"
+    },
+    {
+      "id": "45",
+      "word": "toxel",
+      "type": "electric/poison",
+      "gen": "8"
+    },
+    {
+      "id": "46",
+      "word": "unown",
+      "type": "psychic",
+      "gen": "2"
+    },
+    {
+      "id": "47",
+      "word": "yanma",
+      "type": "bug/flying",
+      "gen": "2"
+    },
+    {
+      "id": "48",
+      "word": "zorua",
+      "type": "dark",
+      "gen": "5"
+    },
+    {
+      "id": "49",
+      "word": "zubat",
+      "type": "poison/flying",
+      "gen": "1"
+    }
+  ]
+}
